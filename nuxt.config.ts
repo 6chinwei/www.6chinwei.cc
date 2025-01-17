@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint'],
+  modules: [
+    '@nuxt/eslint',
+    '@zadigetvoltaire/nuxt-gtm',
+  ],
   devtools: { enabled: true },
   compatibilityDate: '2024-11-01',
   app: {
@@ -13,4 +16,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+  gtm: {
+    id: 'GTM-T5L3CX5R',
+  }
 });
