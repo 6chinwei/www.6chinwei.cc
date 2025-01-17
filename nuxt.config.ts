@@ -16,6 +16,9 @@ export default defineNuxtConfig({
 
         // Canonical Url
         { rel: 'canonical', href: process.env.APP_URL },
+
+        // Favicon
+        { rel: 'icon', href: `${ process.env.APP_URL}/favicon.ico` }
       ],
     },
   },
