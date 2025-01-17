@@ -10,22 +10,7 @@
           </h1>
           <p class="skills">Specializing in {{ appConfig.skills.join(' / ') }}</p>
 
-          <nav class="contact">
-            <ul>
-              <li class="link-codepen">
-                <a href="https://codepen.io/6chinwei" target="_blank">Codepen</a>
-              </li>
-              <li class="link-linkedin">
-                <a href="https://www.linkedin.com/in/6chinwei/" target="_blank">LinkedIn</a>
-              </li>
-              <li class="link-github">
-                <a href="https://github.com/6chinwei" target="_blank">Github</a>
-              </li>
-              <li class="link-mail">
-                <a href="mailto:6chinwei@gmail.com" target="_blank">Mail</a>
-              </li>
-            </ul>
-          </nav>
+          <ContactList :contact-list="appConfig.contactList" />
         </div>
       </AppWindow>
     </div>
@@ -34,7 +19,6 @@
 
 <script setup lang="ts">
 const appConfig = useAppConfig();
-
 </script>
 
 <style scoped lang="scss">
@@ -71,16 +55,17 @@ const appConfig = useAppConfig();
 
 .content {
   padding-top: 1.25rem;
-  padding-bottom: calc(1.25rem * 2 + 3.25rem); // Add the height of the contact bar
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  padding-bottom: 1.25rem; // Add the height of the contact bar
+  padding-left: 1rem;
+  padding-right: 1rem;
   height: 100%;
   position: relative;
+
 
   @include for-desktop {
     min-height: unset;
     padding-top: 1.5rem;
-    padding-bottom: calc(1.5rem * 2 + 4rem);
+    padding-bottom: 1.5rem;
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -105,7 +90,7 @@ const appConfig = useAppConfig();
     display: block;
     font-size: 3rem;
     font-weight: bold;
-    line-height: 1.25;
+    line-height: 1.5;
     margin-left: -0.25rem; // Reduce the padding-left of letter 'R'
     margin-bottom: 0.5rem;
 
@@ -123,84 +108,7 @@ const appConfig = useAppConfig();
 .skills {
   font-size: 1rem;
   margin-top: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 4rem;
 }
 
-.contact {
-  position: absolute;
-  bottom: 1.5rem;
-  right: 1.5rem;
-
-  ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.125rem;
-
-    @include for-desktop {
-      gap: 1.5rem;
-    }
-  }
-
-  %link {
-    --size: 3.25rem;
-
-    width: var(--size);
-    height: var(--size);
-    border-radius: 1rem;
-    overflow: hidden;
-    opacity: 0.75;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 1.25rem;
-
-    @include for-desktop {
-      --size: 4rem;
-      background-size: 1.5rem;
-    }
-
-    a {
-      font-size: 0.75rem;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: transparent;
-    }
-
-    &:hover {
-        opacity: 1;
-      }
-  }
-
-  .link-linkedin {
-    @extend %link;
-    background-color: var(--color-blue);
-    background-image: url('~/assets/images/icon-linkedin.svg');
-  }
-
-  .link-github {
-    @extend %link;
-    background-color: var(--color-orange);
-    background-image: url('~/assets/images/icon-github.svg');
-  }
-
-  .link-codepen {
-    @extend %link;
-    background-color: var(--color-green);
-    background-image: url('~/assets/images/icon-codepen.svg');
-  }
-
-  .link-mail {
-    @extend %link;
-    background-color: var(--color-red);
-    background-image: url('~/assets/images/icon-mail.svg');
-    background-size: 1.125rem; // Adjust to smaller size for the mail icon
-
-    @include for-desktop {
-      background-size: 1.25rem;
-    }
-  }
-}
 </style>
