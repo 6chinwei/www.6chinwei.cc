@@ -1,8 +1,14 @@
 <script setup>
-import ogImage from '~/assets/images/og.png';
+import ogImagePath from '~/assets/images/og.png';
 
 const appConfig = useAppConfig();
 const runtimeConfig = useRuntimeConfig();
+
+// The result of imported `ogImage` in server-side is a relative path,
+// but in client-side is an absolute path based on the browser.
+const ogImageUrl = import.meta.server
+  ? `${ runtimeConfig.public.APP_URL }${ ogImagePath }`
+  : ogImagePath;
 
 useSeoMeta({
   title: appConfig.seo.title,
@@ -13,7 +19,7 @@ useSeoMeta({
   ogType: 'website',
   ogDescription: appConfig.seo.description,
   ogImage: {
-    url: `${ runtimeConfig.public.APP_URL }${ ogImage }`,
+    url: ogImageUrl,
     width: 1200,
     height: 630
   },
