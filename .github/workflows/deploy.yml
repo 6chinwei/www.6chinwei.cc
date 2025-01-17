@@ -18,6 +18,7 @@ jobs:
           node-version: "20"
       # Pick your own package manager and build script
       - run: npm install
+      - run: cp .env.production .env
       - run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

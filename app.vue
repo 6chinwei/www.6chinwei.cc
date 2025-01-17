@@ -1,4 +1,6 @@
 <script setup>
+import ogImage from '~/assets/images/og.png';
+
 const appConfig = useAppConfig();
 
 useSeoMeta({
@@ -8,11 +10,11 @@ useSeoMeta({
   keywords: appConfig.seo.keywords,
   ogType: 'website',
   ogDescription: appConfig.seo.description,
-  // ogImage: {
-  //   url: '',
-  //   width: 1200,
-  //   height: 630
-  // },
+  ogImage: {
+    url: `${ appConfig.appUrl }${ ogImage }`,
+    width: 1200,
+    height: 630
+  },
   twitterCard: 'summary_large_image'
 });
 
