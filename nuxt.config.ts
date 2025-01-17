@@ -18,5 +18,10 @@ export default defineNuxtConfig({
   },
   gtm: {
     id: 'GTM-T5L3CX5R',
-  }
+  },
+  runtimeConfig: {
+    public: {
+      APP_URL: process.env.APP_URL,
+    },
+  },
 });

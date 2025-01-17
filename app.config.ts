@@ -8,8 +8,6 @@ const SKILLS = [
 ];
 
 export default defineAppConfig({
-  appUrl: process.env.APP_URL || '',
-
   seo: {
     title: 'Rocky Liu (@6chinwei) - A Web-Tech Pathfinder transforming challenges into elegant solutions',
     description: `Hello! I’m Rocky Liu (@6chinwei), a Web-Tech Pathfinder transforming challenges into elegant solutions. Specializing in ${ SKILLS.join(' / ') }`,
