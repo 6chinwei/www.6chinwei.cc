@@ -8,6 +8,8 @@ useSeoMeta({
   ogTitle: appConfig.seo.title,
   description: appConfig.seo.description,
   keywords: appConfig.seo.keywords,
+  canonical: appConfig.appUrl,
+  ogUrl: appConfig.appUrl,
   ogType: 'website',
   ogDescription: appConfig.seo.description,
   ogImage: {
