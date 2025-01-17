@@ -2,18 +2,18 @@
 import ogImage from '~/assets/images/og.png';
 
 const appConfig = useAppConfig();
+const runtimeConfig = useRuntimeConfig();
 
 useSeoMeta({
   title: appConfig.seo.title,
   ogTitle: appConfig.seo.title,
   description: appConfig.seo.description,
   keywords: appConfig.seo.keywords,
-  canonical: appConfig.appUrl,
-  ogUrl: appConfig.appUrl,
+  ogUrl: runtimeConfig.public.APP_URL,
   ogType: 'website',
   ogDescription: appConfig.seo.description,
   ogImage: {
-    url: `${ appConfig.appUrl }${ ogImage }`,
+    url: `${ runtimeConfig.public.APP_URL }${ ogImage }`,
     width: 1200,
     height: 630
   },
