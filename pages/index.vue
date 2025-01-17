@@ -26,7 +26,7 @@ const appConfig = useAppConfig();
 
 .page {
   color: var(--color-black);
-  background-color: var(--color-dark-blue);
+  background-image: radial-gradient(circle at 50% 50%, var(--color-light-blue) 20%, var(--color-dark-blue) 70%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,6 +39,16 @@ const appConfig = useAppConfig();
 
   @include for-desktop {
     padding: 1rem;
+  }
+
+  // TEMP
+  &.bg-2 {
+    background-image: linear-gradient(135deg, var(--color-light-blue) 0%, var(--color-light-blue) 50%, var(--color-dark-blue) 50%, var(--color-dark-blue) 100%);
+  }
+
+  // TEMP
+  &.bg-3 {
+    background-image: repeating-linear-gradient(135deg, var(--color-dark-blue), var(--color-dark-blue) 10rem, var(--color-light-blue) 10rem, var(--color-light-blue) 15rem);
   }
 }
 
