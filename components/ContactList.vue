@@ -71,7 +71,7 @@ const { contactList } = defineProps<ContactListProps>();
 
     width: var(--size);
     height: var(--size);
-    border-radius: 1rem;
+    border-radius: 25%;
     overflow: hidden;
     opacity: 0.75;
     background-position: center center;
