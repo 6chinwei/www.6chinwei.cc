@@ -26,6 +26,12 @@ useSeoMeta({
   twitterCard: 'summary_large_image'
 });
 
+useHead({
+  htmlAttrs: {
+    lang: 'en'
+  }
+});
+
 </script>
 
 <template>

@@ -11,10 +11,7 @@
   </div>
 </template>
 
-<script setup></script>
-
 <style scoped lang="scss">
-
 .image {
   width: 300px;
   height: auto;

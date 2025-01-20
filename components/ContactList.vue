@@ -2,7 +2,7 @@
   <nav class="contact">
     <p class="find-me">Find <span class="id">@6chinwei</span> on</p>
     <ul>
-      <li v-for="contact of contactList" :key="contact.type" :class="`link-${contact.type}`">
+      <li v-for="contact of contactList" :key="contact.type" :class="`link-${contact.type}`" :data-text="contact.text">
         <a :href="contact.url" target="_blank">{{ contact.text }}</a>
       </li>
     </ul>
@@ -69,10 +69,10 @@ const { contactList } = defineProps<ContactListProps>();
   %link {
     --size: 3.75rem;
 
+    position: relative;
     width: var(--size);
     height: var(--size);
-    border-radius: 1rem;
-    overflow: hidden;
+    border-radius: 25%;
     opacity: 0.75;
     background-position: center center;
     background-repeat: no-repeat;
@@ -93,8 +93,50 @@ const { contactList } = defineProps<ContactListProps>();
       color: transparent;
     }
 
+    // Tooltip
+    &::before {
+      content: attr(data-text);
+      position: absolute;
+      display: flex;
+      top: -7px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100%);
+      width: auto;
+      height: auto;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      background-color: var(--color-gray);
+      color: var(--color-white);
+      border-radius: 0.5rem;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    // Tooltip Arrow
+    &::after {
+      content: '';
+      position: absolute;
+      display: flex;
+      top: 0px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100%);
+      width: auto;
+      height: auto;
+      width: 0;
+      height: 0;
+      border-top: 8px solid var(--color-gray);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
     &:hover {
       opacity: 1;
+
+      &::before, &::after {
+        opacity: 1;
+      }
     }
   }
 
