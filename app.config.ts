@@ -1,10 +1,7 @@
 const SKILLS = [
-  'CSS',
-  'JavaScript',
-  'Node.js',
-  'PHP',
-  'AWS',
-  'SEO',
+  'Full-Stack Web Development',
+  'Scalable Architecture',
+  'AI-Driven Engineering Efficiency'
 ];
 
 export default defineAppConfig({
