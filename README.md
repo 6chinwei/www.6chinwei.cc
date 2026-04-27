@@ -2,6 +2,10 @@
 The source code of [www.6chinwei.cc](https://www.6chinwei.cc), built with [Nuxt](https://nuxt.com/).
 
 ## Development
+1. Setup Node.js version
+   ```sh
+   nvm install
+   ```
 1. Install dependencies  
    ```sh
    npm install
