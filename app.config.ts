@@ -16,7 +16,7 @@ export default defineAppConfig({
   contactList: [
     {
       type: 'codepen',
-      text: 'Codepen',
+      text: 'CodePen',
       url: 'https://codepen.io/6chinwei',
     },
     {
@@ -26,7 +26,7 @@ export default defineAppConfig({
     },
     {
       type: 'github',
-      text: 'Github',
+      text: 'GitHub',
       url: 'https://github.com/6chinwei',
     },
     {
